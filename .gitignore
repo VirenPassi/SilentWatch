@@ -1,0 +1,37 @@
+# Ignore Large Dataset Folders
+SPHAR-Dataset*/
+processed/
+
+# Ignore Dataset from D:/ drive as well
+D:/processed/
+D:/SPHAR-Dataset-1.0/
+
+# Python Build and Caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.cache
+.hypothesis/
+.idea/
+.vscode/
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+
+# Model Checkpoints and Results
+*.pth
+*.h5
+*.ckpt
+runs/
+logs/
+
+# System Files
+.DS_Store
+Thumbs.db

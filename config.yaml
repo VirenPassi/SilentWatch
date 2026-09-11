@@ -1,0 +1,36 @@
+# SilentWatch Hyperparameters
+dataset:
+  raw_dir: "D:/SPHAR-Dataset-1.0/SPHAR-Dataset-1.0/videos"
+  processed_dir: "D:/processed"
+  frame_size: [224, 224]
+  fps: 10
+  sampling_rate: 5 # 1 out of every 5 frames
+  annotation_csv: null # Optional CSV: video_name plus toa_frame (source frame) or toa_seconds
+  seq_length: 16
+  train_split: 0.7
+  val_split: 0.15
+  test_split: 0.15
+
+model:
+  name: "SilentWatch"
+  backbone: "mobilenet_v2"
+  temporal_module: "lstm" # or 'gru'
+  hidden_dim: 512
+  num_layers: 2
+  num_classes: 14
+
+training:
+  batch_size: 8
+  num_workers: 4
+  use_amp: true
+  lr: 0.0001 # 1e-4
+  epochs: 10
+  alpha: 1.0 # Class loss weight
+  beta: 2.0  # ToA loss weight
+  early_stopping_patience: 10
+  seed: 42
+  checkpoint_path: "silentwatch_best_model.pth"
+  device: "cuda"
+
+evaluation:
+  toa_tolerance: 5 # +/- 5 frames for localization accuracy
