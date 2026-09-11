@@ -1,0 +1,7 @@
+{
+  "classification_accuracy": 78.54,
+  "classification_f1": 0.78,
+  "toa_mae_frames": 2.14,
+  "toa_localization_accuracy_percent": 90.91,
+  "tolerance_window_frames": 5
+}
